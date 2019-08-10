@@ -1,0 +1,11 @@
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\bin\Debug\netcoreapp2.2\MA.WebAPI.deps.json
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\bin\Debug\netcoreapp2.2\MA.WebAPI.runtimeconfig.json
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\bin\Debug\netcoreapp2.2\MA.WebAPI.runtimeconfig.dev.json
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\bin\Debug\netcoreapp2.2\MA.WebAPI.dll
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.csprojAssemblyReference.cache
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.csproj.CoreCompileInputs.cache
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.RazorAssemblyInfo.cache
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.RazorAssemblyInfo.cs
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.AssemblyInfoInputs.cache
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.AssemblyInfo.cs
+F:\2019Projects\MA.Center.NetCore\MA.CenterV2\MA.WebAPI\obj\Debug\netcoreapp2.2\MA.WebAPI.RazorTargetAssemblyInfo.cache

@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\2019Projects\\MA.Center.NetCore\\MA.CenterV2\\MA.WebAPI\\MA.WebAPI.csproj": {}
+  },
+  "projects": {
+    "F:\\2019Projects\\MA.Center.NetCore\\MA.CenterV2\\MA.WebAPI\\MA.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\2019Projects\\MA.Center.NetCore\\MA.CenterV2\\MA.WebAPI\\MA.WebAPI.csproj",
+        "projectName": "MA.WebAPI",
+        "projectPath": "F:\\2019Projects\\MA.Center.NetCore\\MA.CenterV2\\MA.WebAPI\\MA.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\li\\.nuget\\packages\\",
+        "outputPath": "F:\\2019Projects\\MA.Center.NetCore\\MA.CenterV2\\MA.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\li\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
