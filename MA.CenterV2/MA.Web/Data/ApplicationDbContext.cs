@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MA.Web.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<UserInfo>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -16,6 +16,7 @@ namespace MA.Web.Data
 
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<Post> Post { get; set; }
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

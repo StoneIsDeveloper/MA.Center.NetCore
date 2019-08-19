@@ -6,14 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MA.Web.Data.Entity;
+using MA.Web.Data;
 
 namespace MA.Web.Controllers
 {
     public class BlogsController : Controller
     {
-        private readonly BloggingContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public BlogsController(BloggingContext context)
+        public BlogsController(ApplicationDbContext context)
         {
             _context = context;
         }

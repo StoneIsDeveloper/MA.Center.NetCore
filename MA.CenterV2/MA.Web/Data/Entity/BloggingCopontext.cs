@@ -25,7 +25,7 @@ namespace MA.Web.Data.Entity
             if (!optionsBuilder.IsConfigured)
             {
 
-               // optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;");
             }
         }
 
