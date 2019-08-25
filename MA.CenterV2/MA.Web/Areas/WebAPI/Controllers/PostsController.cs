@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MA.Web.Data.Entity;
+using MA.Web.Data;
 
 namespace MA.Web.Areas.WebAPI.Controllers
 {
@@ -13,9 +14,9 @@ namespace MA.Web.Areas.WebAPI.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
-        private readonly BloggingContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public PostsController(BloggingContext context)
+        public PostsController(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -14,13 +14,13 @@ namespace MA.Web.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<UserInfo> _userManager;
-        private readonly SignInManager<UserInfo> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IEmailSender _emailSender;
 
         public IndexModel(
-            UserManager<UserInfo> userManager,
-            SignInManager<UserInfo> signInManager,
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -75,8 +75,8 @@ namespace MA.Web.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                Name = user.Name,
-                DOB = user.DOB,
+                //Name = user.Name,
+                //DOB = user.DOB,
                 Email = email,
                 PhoneNumber = phoneNumber
             };
@@ -110,15 +110,15 @@ namespace MA.Web.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            if (Input.Name != user.Name)
-            {
-                user.Name = Input.Name;
-            }
+            //if (Input.Name != user.Name)
+            //{
+            //    user.Name = Input.Name;
+            //}
 
-            if (Input.DOB != user.DOB)
-            {
-                user.DOB = Input.DOB;
-            }
+            //if (Input.DOB != user.DOB)
+            //{
+            //    user.DOB = Input.DOB;
+            //}
 
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)

@@ -29,9 +29,16 @@
 
 
   <ItemGroup>
+    <Folder Include="Areas\Identity\Controllers\" />
+    <Folder Include="Areas\Identity\Views\" />
     <Folder Include="Areas\WebAPI\Data\" />
     <Folder Include="Areas\WebAPI\Models\" />
     <Folder Include="Areas\WebAPI\Views\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\MA.DBAccess\MA.DBAccess.csproj" />
   </ItemGroup>
 
 </Project>

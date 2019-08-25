@@ -46,10 +46,7 @@ namespace MA.Web
                 options.UseSqlServer(
                      Configuration.GetConnectionString("DefaultConnection")));
 
-            //注册DbContext
-            services.AddDbContext<BloggingContext>(options =>
-                      options.UseSqlServer(
-                          Configuration.GetConnectionString("DefaultConnection")));
+            
 
 
             services.AddDefaultIdentity<IdentityUser>()
@@ -61,8 +58,8 @@ namespace MA.Web
                 // Password settings.
                 options.Password.RequireDigit = true;
                 options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = true;
-                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 1;
 
@@ -175,7 +172,7 @@ namespace MA.Web
             get
             {
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var fileName = "";//typeof(UserInfoModel).GetTypeInfo().Assembly.GetName().Name + ".xml";
+                var fileName = "";//typeof(ApplicationUserModel).GetTypeInfo().Assembly.GetName().Name + ".xml";
                 return Path.Combine(basePath, fileName);
             }
         }
