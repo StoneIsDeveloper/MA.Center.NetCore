@@ -8,12 +8,18 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\**" />
+    <Compile Remove="obj\**" />
     <Content Remove="Migrations\**" />
+    <Content Remove="obj\**" />
     <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="obj\**" />
     <None Remove="Migrations\**" />
+    <None Remove="obj\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Views\Contacts\Create.cshtml.cs" />
+    <Compile Remove="Data\CenterAppDBContext.cs" />
     <Compile Remove="Data\Entity\BloggingCopontext.cs" />
   </ItemGroup>
 
@@ -29,6 +35,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\NewFolder\" />
     <Folder Include="Areas\Identity\Controllers\" />
     <Folder Include="Areas\Identity\Views\" />
     <Folder Include="Areas\WebAPI\Data\" />
@@ -38,7 +45,29 @@
 
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Contacts\Create.cshtml.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <ProjectReference Include="..\MA.DBAccess\MA.DBAccess.csproj" />
   </ItemGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 
 </Project>

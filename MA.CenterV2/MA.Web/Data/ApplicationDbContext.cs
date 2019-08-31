@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MA.Web.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -17,9 +17,11 @@ namespace MA.Web.Data
 
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<Post> Post { get; set; }
-       //  public virtual DbSet<UserInfo> UserInfo { get; set; }
 
-       // public virtual DbSet<IdentityUser> IdentityUser { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
+
+
+        // public virtual DbSet<AppUser> AppUser { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

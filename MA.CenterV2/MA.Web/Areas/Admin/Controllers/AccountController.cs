@@ -3,42 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MA.DBAccess;
-using MA.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MA.Web.Areas.Identity.Controllers
+namespace MA.Web.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class UserController : Controller
+    [Area("Admin")]
+    public class AccountController : Controller
     {
-       
         public readonly UserService userService = new UserService();
-        // GET: User
-        [HttpGet]
-        public IActionResult Index()
+
+
+        // GET: Admin
+      
+        public ActionResult Index()
         {
             var users = userService.GetUseInfos();
             return View(users);
         }
 
-
-        // GET: User/Details/5
+        // GET: Admin/Details/5
         public ActionResult Details(int id)
         {
-           // HttpContext
-              //  CookieAuthentication
             return View();
         }
 
-        // GET: User/Create
+        // GET: Admin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: User/Create
+        // POST: Admin/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -55,13 +51,13 @@ namespace MA.Web.Areas.Identity.Controllers
             }
         }
 
-        // GET: User/Edit/5
+        // GET: Admin/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: User/Edit/5
+        // POST: Admin/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -78,13 +74,13 @@ namespace MA.Web.Areas.Identity.Controllers
             }
         }
 
-        // GET: User/Delete/5
+        // GET: Admin/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: User/Delete/5
+        // POST: Admin/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

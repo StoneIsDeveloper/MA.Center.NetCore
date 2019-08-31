@@ -20,6 +20,11 @@ using System.Reflection;
 using System.IO;
 using Swashbuckle.AspNetCore.Swagger;
 using MA.Web.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Contact = Swashbuckle.AspNetCore.Swagger.Contact;
+using MA.Web.Areas.Admin.Handler;
 
 namespace MA.Web
 {
@@ -46,13 +51,15 @@ namespace MA.Web
                 options.UseSqlServer(
                      Configuration.GetConnectionString("DefaultConnection")));
 
-            
+            services.AddIdentity<AppUser,IdentityRole>()
+              .AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders()
+              .AddRoles<IdentityRole>()
+              .AddDefaultUI(UIFramework.Bootstrap4);
 
 
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultUI(UIFramework.Bootstrap4);
-                
+
+            // password setting
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings.
@@ -68,6 +75,10 @@ namespace MA.Web
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.AllowedForNewUsers = true;
 
+                // Default SignIn settings.
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+
                 // User settings.
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
@@ -80,16 +91,42 @@ namespace MA.Web
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
+                options.Cookie.Name = "MACenterV2";
+                // ReturnUrlParameter requires 
+                //using Microsoft.AspNetCore.Authentication.Cookies;
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+
                 options.LoginPath = "/Identity/Account/Login";
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
                 options.SlidingExpiration = true;
+
+
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // using Microsoft.AspNetCore.Identity;
+            services.Configure<PasswordHasherOptions>(option =>
+            {
+                option.IterationCount = 12000;
+            });
+
+            services.AddMvc(config => {
+                // add AuthorizeFilter
+                var policy = new AuthorizationPolicyBuilder()
+                                  .RequireAuthenticatedUser()
+                                  .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Authorization handlers
+            services.AddScoped<IAuthorizationHandler, ContactIsOwnerAuthorizationHandler>();
+            services.AddScoped<IAuthorizationHandler, ContactAdministratorsAuthorizationHandler>();
+            services.AddSingleton<IAuthorizationHandler,ContactManagerAuthorizationHandler>();
+
 
             // Swagger API
             // 版本控制
-           // services.AddMvcCore().AddVersionedApiExplorer(o => o.GroupNameFormat = "'v'VVV");
+            // services.AddMvcCore().AddVersionedApiExplorer(o => o.GroupNameFormat = "'v'VVV");
             services.AddApiVersioning(option =>
             {
                 option.AssumeDefaultVersionWhenUnspecified = true;
@@ -141,10 +178,16 @@ namespace MA.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            // Identity中间件
             app.UseAuthentication();
+
+            
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                   name: "Admin",
+                   template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
