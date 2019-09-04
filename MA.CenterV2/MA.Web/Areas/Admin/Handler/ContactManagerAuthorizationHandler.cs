@@ -19,7 +19,14 @@ namespace MA.Web.Areas.Admin.Handler
                 return Task.CompletedTask;
             }
 
-            // Administrators can do anything.
+            // If not asking for approval/reject, return.
+            if (requirement.Name != Constants.ApproveOperationName &&
+                requirement.Name != Constants.RejectOperationName)
+            {
+                return Task.CompletedTask;
+            }
+
+            // Managers can approve or reject.
             if (context.User.IsInRole(Constants.ContactManagersRole))
             {
                 context.Succeed(requirement);

@@ -1,3 +1,6 @@
 ﻿@using MA.Web
 @using MA.Web.Models
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using MA.Web.Areas.Admin;
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService

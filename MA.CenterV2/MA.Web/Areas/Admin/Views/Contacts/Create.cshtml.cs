@@ -16,6 +16,7 @@ namespace MA.Web.Areas.Admin.Views.Contacts
         {
         }
 
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
