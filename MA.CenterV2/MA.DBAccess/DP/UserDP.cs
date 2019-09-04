@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
-namespace MA.DBAccess
+namespace MA.DBAccess.DP
 {
-    public class UserService
+    public class UserDP
     {
-        public List<UserInfo> GetUseInfos()
+        public static List<UserInfo> GetUseInfos()
         {
             var results = new List<UserInfo>();
             try
@@ -32,7 +33,7 @@ namespace MA.DBAccess
             }
             catch (Exception ex)
             {
-               // LogStoreHelper.WriteError(ex, $"SqlHelper.GetSingleResult error");
+                // LogStoreHelper.WriteError(ex, $"SqlHelper.GetSingleResult error");
                 throw ex;
             }
             return results;

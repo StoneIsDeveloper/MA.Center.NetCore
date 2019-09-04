@@ -25,6 +25,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Contact = Swashbuckle.AspNetCore.Swagger.Contact;
 using MA.Web.Areas.Admin.Handler;
+using MA.DBAccess.IService;
+using MA.DBAccess;
+using MA.DBAccess.Service;
 
 namespace MA.Web
 {
@@ -123,6 +126,10 @@ namespace MA.Web
             services.AddScoped<IAuthorizationHandler, ContactAdministratorsAuthorizationHandler>();
             services.AddSingleton<IAuthorizationHandler,ContactManagerAuthorizationHandler>();
 
+            // User Service 依赖注入
+           
+            services.AddScoped<IUserService, AdminUserService>();
+           // services.AddScoped<IUserService, UserService>();
 
             // Swagger API
             // 版本控制

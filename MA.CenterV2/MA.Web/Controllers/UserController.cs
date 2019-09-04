@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MA.DBAccess;
+using MA.DBAccess.IService;
 using MA.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -13,13 +14,19 @@ namespace MA.Web.Areas.Identity.Controllers
     [Authorize]
     public class UserController : Controller
     {
-       
-        public readonly UserService userService = new UserService();
+
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         // GET: User
         [HttpGet]
         public IActionResult Index()
         {
-            var users = userService.GetUseInfos();
+            var users = _userService.GetUseInfos();
             return View(users);
         }
 
