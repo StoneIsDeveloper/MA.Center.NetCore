@@ -8,7 +8,7 @@ namespace MA.Web.Data.Entity
 {
     public class Contact
     {
-        public int ContactId { get; set; }
+        public long ContactId { get; set; }
 
         // user ID from AspNetUser table.
         public string OwnerID { get; set; }

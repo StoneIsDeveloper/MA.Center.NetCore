@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MA.Web", "MA.Web\MA.Web.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MA.Models", "MA.Models\MA.Models.csproj", "{35736F3E-72BA-4963-B886-A308A185720E}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MA.CenterCore", "MA.CenterCore\MA.CenterCore.sqlproj", "{F8879EEA-EFE3-4958-B505-E995E1FF161A}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MA.Database", "MA.CenterCore\MA.Database.sqlproj", "{F8879EEA-EFE3-4958-B505-E995E1FF161A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MA.DBAccess", "MA.DBAccess\MA.DBAccess.csproj", "{68CD00BF-90D9-400E-90F8-D74518200569}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MA.DBAccess", "MA.DBAccess\MA.DBAccess.csproj", "{68CD00BF-90D9-400E-90F8-D74518200569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{6466F4A1-7B7D-4CD8-86C5-6212DAAD4043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{68CD00BF-90D9-400E-90F8-D74518200569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68CD00BF-90D9-400E-90F8-D74518200569}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68CD00BF-90D9-400E-90F8-D74518200569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6466F4A1-7B7D-4CD8-86C5-6212DAAD4043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6466F4A1-7B7D-4CD8-86C5-6212DAAD4043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6466F4A1-7B7D-4CD8-86C5-6212DAAD4043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6466F4A1-7B7D-4CD8-86C5-6212DAAD4043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

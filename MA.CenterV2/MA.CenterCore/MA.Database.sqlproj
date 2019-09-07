@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>MA.CenterCore</Name>
+    <Name>MA.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{f8879eea-efe3-4958-b505-e995e1ff161a}</ProjectGuid>
@@ -11,8 +11,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>MA.CenterCore</RootNamespace>
-    <AssemblyName>MA.CenterCore</AssemblyName>
+    <RootNamespace>MA.Database</RootNamespace>
+    <AssemblyName>MA.Database</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -58,10 +58,15 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Scripts" />
+    <Folder Include="Scripts\CustomType" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Tables\dbo.Blog.sql" />
     <None Include="Tables\dbo.Post.sql" />
     <None Include="Scripts\dbo.GetAllUserInfos.sql" />
+    <None Include="Scripts\CustomType\ListIDTableType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Scripts\dbo.GetContactByIdRange.sql" />
   </ItemGroup>
 </Project>
